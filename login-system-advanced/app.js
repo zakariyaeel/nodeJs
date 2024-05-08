@@ -112,6 +112,11 @@ app.post('/login',(req,res)=>{
     })
 });
 
+app.get('/logout',(req,res)=>{
+    req.session.destroy();
+    res.redirect('/');
+});
+
 const port = 3000;
 app.listen(port,(err)=>{
     if(err){
